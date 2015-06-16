@@ -1,0 +1,30 @@
+---
+server:
+    install: '1'
+    packages: [vim, git, htop, mc]
+    timezone: Europe/Warsaw
+    locale: en_US.UTF-8
+vagrant_local:
+    install: '1'
+    vm: { base_box: trusty64, hostname: default, ip: 192.168.33.99, memory: '512', sharedfolder: ./, enableWindows: '1', useVagrantCloud: '1', syncType: nfs }
+nginx:
+    install: '1'
+    docroot: /vagrant/web
+    servername: geos.vb
+mysql:
+    install: '1'
+    root_password: geos
+    database: geos
+    user: geos_vb
+    password: geos_vb
+    dump: ''
+redis:
+    install: '1'
+    port: '6379'
+php:
+    install: '1'
+    ppa: php5-5.6
+    packages: [php5-cli, php5-intl, php5-mcrypt, php5-curl, php5-fpm, php5-gd, php5-common, php5-redis, php5-mysql, php5-xdebug]
+composer:
+    install: '1'
+

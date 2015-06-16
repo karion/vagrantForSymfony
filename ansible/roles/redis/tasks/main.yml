@@ -1,0 +1,11 @@
+---
+- name: redis | Install Redis Packages
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - redis-server
+
+- name: Ensure redis is started
+  service: name=redis-server state=started
+
+
